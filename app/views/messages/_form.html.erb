@@ -1,0 +1,13 @@
+<%= form_for @message do |f| %>
+  <div>
+    Title:<br/>
+    <%= f.text_field :author %>
+  </div>
+  <div>
+    Content:<br/>
+    <%= f.text_field :content %>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,11 @@
+<h1>Message <%= @message.id %></h1>
+
+<div>
+  <%= @message.content %>
+</div>
+<div>
+  by <strong><%= @message.author %></strong>
+</div>
+
+<hr/>
+<%= link_to 'Messages', messages_path %>
