@@ -47,4 +47,17 @@ Rails.application.configure do
 
   # Annotate rendered view with file names.
   # config.action_view.annotate_rendered_view_with_filenames = true
+
+  ###
+
+  if ENV['VERBOSE_LOGS']
+    Rails.logger = ActiveSupport::Logger.new($stdout)
+    Rails.logger.level = Logger::DEBUG
+
+    # Print deprecation notices to the Rails logger.
+    config.active_support.deprecation = :log
+
+    # Highlight code that triggered database queries in logs.
+    config.active_record.verbose_query_logs = true
+  end
 end
